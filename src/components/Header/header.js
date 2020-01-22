@@ -15,7 +15,7 @@ function Header() {
                 <div class="user_icon">
                   <img src={userphoto} alt="" />
                 </div>
-                User.username
+                User
               </div>
               <div class="top_bar_content ml-auto">
                 <div class="top_bar_user">
