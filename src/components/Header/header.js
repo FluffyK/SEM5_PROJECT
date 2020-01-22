@@ -90,7 +90,8 @@ function Header() {
                                 </li>
                                 <li>
                                   <a class="clc">
-                                    <Link to="/Category">Jewelry & Accessories</Link>
+                                    {/* <Link to="/Category">Jewelry & Accessories</Link> */}
+                                    Jewelry & Accessories
                                   </a>
                                 </li>
                                 <li>
