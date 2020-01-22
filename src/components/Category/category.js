@@ -1,13 +1,13 @@
 import React from 'react'
-import Header from '../Header/header'
-import Footer from '../Footer/footer'
+// import Header from '../Header/header'
+// import Footer from '../Footer/footer'
 
-export default function category() {
+export default function Category() {
     return (
         <div>
-            <Header></Header>
+            {/* <Header></Header> */}
             <p>mata ii curva</p>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     )
 }

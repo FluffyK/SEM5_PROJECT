@@ -256,7 +256,7 @@ function Header() {
             </div>
           </nav>
           <Switch>
-            <Route exact path="/category">
+            <Route path="/category">
               <Category />
             </Route>
             <Route path="/">

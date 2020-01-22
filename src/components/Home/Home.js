@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from "../Footer/footer";
-import Header from "../Header/header";
+// import Footer from "../Footer/footer";
+// import Header from "../Header/header";
 import banner from "../../assets/88.png";
 import zero from "../../assets/0.jpg";
 import fiftyfive from "../../assets/55.jpg";
@@ -15,7 +15,7 @@ import {
 export default function Home() {
     return (
         <div className="App">
-      <Header />
+      {/* <Header /> */}
       <div class="super_container">
         <div class="banner">
           <div
@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
       <section class="feature_part pt-4"></section>
-      <Footer />
+      {/* <Footer /> */}
     </div>
     )
 }
