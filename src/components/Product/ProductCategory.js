@@ -1,17 +1,16 @@
-import React from "react";
-import two from "../../assets/2.jpg";
-export default function CategoryProduct() {
+import React from "react"
+export default function CategoryProduct(props) {
   return (
     <div className="App">
       <div class="col-lg-4 col-sm-6">
         <div class="single_category_product">
           <div class="single_category_img">
-            <img src={two} alt="" />
+            <img src={props.img} alt="" />
             <div class="category_social_icon">
               <ul>
                 <li>
                   <a href="#">
-                  <i class="fa fa-heart"></i>
+                    <i class="fa fa-heart"></i>
                   </a>
                 </li>
                 <li>
@@ -23,13 +22,13 @@ export default function CategoryProduct() {
             </div>
             <div class="category_product_text">
               <a href="/details">
-                <h5>Jewelry</h5>
+                <h5>{props.title}</h5>
               </a>
-              <p>$5.00</p>
+              <p>{props.price}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -15,7 +15,7 @@ export default function Category() {
                   <div class="widgets_inner">
                     <ul class="list">
                       <li>
-                        <a href="/category/jewelryandaccessory">Jewelry & Accessories</a>
+                        <a href="/category/jewelry">Jewelry & Accessories</a>
                       </li>
 
                       <li>
@@ -34,7 +34,7 @@ export default function Category() {
                         <a href="/category/vintage">Vintage</a>
                       </li>
                       <li>
-                        <a href="/category/productsforhome">Produces for Home</a>
+                        <a href="/category/products">Produces for Home</a>
                       </li>
                     </ul>
                   </div>

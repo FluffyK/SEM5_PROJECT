@@ -63,7 +63,7 @@ export default function Product() {
   }
   return (
     <div className="App">
-      <h2>Create Store</h2>
+      <h2>Create Product</h2>
       <hr />
       <form className="form-store" onSubmit={handleSubmit}>
         <div class="form-group">

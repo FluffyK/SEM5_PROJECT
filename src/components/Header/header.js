@@ -1,28 +1,86 @@
-import React from "react";
-import userphoto from "../../assets/43.png";
-import search from "../../assets/search.png";
-import images from "../../assets/images.jpg";
-import heart from "../../assets/heart.jpg";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import React, { Component } from "react"
+import userphoto from "../../assets/43.png"
+import search from "../../assets/search.png"
+import images from "../../assets/images.jpg"
+import heart from "../../assets/heart.jpg"
+import axios from 'axios'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
-function Header(props) {
-  return (
+class Header extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      signInBool: false
+    }
+  }
+  componentDidMount() {
+    const signDiv = document.querySelector("#sign-menu")
+    const usernameDiv = document.querySelector("#username-div")
+    if (localStorage.getItem("token") !== null) {
+
+      const config = {
+        headers: {
+          "auth-token": JSON.parse(localStorage.getItem("token"))
+        }
+      }
+      axios.get("https://localhost:4000/user", config)
+        .then(el => {
+          usernameDiv.appendChild(document.createTextNode(el.data.username))
+        })
+
+      this.setState({signInBool: true})
+      const div1 = document.createElement("div")
+      div1.className = "user_icon"
+      const img1 = document.createElement("img")
+      img1.src = userphoto
+      div1.appendChild(img1)
+
+      const div2 = document.createElement("div")
+      const a1 = document.createElement("a")
+      a1.href = "/logout"
+      a1.innerHTML = "Logout"
+      div2.appendChild(a1)
+
+      signDiv.appendChild(div1)
+      signDiv.appendChild(div2)
+
+    } else {
+      this.setState({signInBool: false})
+      const div1 = document.createElement("div")
+      div1.className = "user_icon"
+      const img1 = document.createElement("img")
+      img1.src = userphoto
+      div1.appendChild(img1)
+
+      const div2 = document.createElement("div")
+      const div3 = document.createElement("div")
+      const a1 = document.createElement("a")
+      const a2 = document.createElement("a")
+      a1.href = "/signUp"
+      a1.innerHTML = "Register"
+      a2.href = "/signIn"
+      a2.innerHTML = "Sign in"
+      div2.appendChild(a1)
+      div3.appendChild(a2)
+
+      signDiv.appendChild(div1)
+      signDiv.appendChild(div2)
+      signDiv.appendChild(div3)
+    }
+  }
+  render() {
+    return (
       <header class="header">
         <div>
           <div class="top_bar">
             <div class="container">
               <div class="row">
                 <div class="col d-flex flex-row">
-                  <div class="top_bar_contact_item">
+                  <div class="top_bar_contact_item" id="username-div">
                     <div class="user_icon">
                       <img src={userphoto} alt="" />
                     </div>
-                    User
+                    
                   </div>
                   <div class="top_bar_content ml-auto">
                     <div class="top_bar_user">
@@ -35,16 +93,8 @@ function Header(props) {
                         MDL <i class="fas chevron-down"></i>
                       </a>
                     </div>
-                    <div class="top_bar_user">
-                      <div class="user_icon">
-                        <img src={userphoto} alt="" />
-                      </div>
-                      <div>
-                        <a href="/signUp">Register</a>
-                      </div>
-                      <div>
-                        <a href="/signIn">Sign in</a>
-                      </div>
+                    <div class="top_bar_user" id="sign-menu">
+                      
                     </div>
                   </div>
                 </div>
@@ -79,27 +129,19 @@ function Header(props) {
                               <span class="custom_dropdown_placeholder clc">
                                 All Categories
                               </span>
-                              <i class = "fas fa-chevron-down"></i>
+                              <i class="fas fa-chevron-down"></i>
                               <ul class="custom_list clc">
                                 <li>
-                                  <a class="clc">
-                                    All Categories
-                                  </a>
+                                  <a class="clc">All Categories</a>
                                 </li>
                                 <li>
-                                  <a class="clc">
-                                    Jewelry & Accessories
-                                  </a>
+                                  <a class="clc">Jewelry & Accessories</a>
                                 </li>
                                 <li>
-                                  <a class="clc">
-                                    Vintage
-                                  </a>
+                                  <a class="clc">Vintage</a>
                                 </li>
                                 <li>
-                                  <a class="clc">
-                                    Toys
-                                  </a>
+                                  <a class="clc">Toys</a>
                                 </li>
                                 <li>
                                   <a class="clc" href="#">
@@ -117,9 +159,8 @@ function Header(props) {
                           <button
                             type="submit"
                             class="header_search_button trans_300"
-                            value="Submit"
-                          >
-                            <img src={search} alt=""/>
+                            value="Submit">
+                            <img src={search} alt="" />
                           </button>
                         </form>
                       </div>
@@ -162,10 +203,10 @@ function Header(props) {
               </div>
             </div>
           </div>
-          {props.children}
+          {this.props.children}
         </div>
       </header>
-
-  );
+    )
+  }
 }
-export default Header;
+export default Header

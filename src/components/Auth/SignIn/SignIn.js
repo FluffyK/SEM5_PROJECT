@@ -4,7 +4,8 @@ import axios from "axios"
 
 export default function SignIn() {
   const [emailValue, setEmailValue] = useState(null);
-  const [passwordValue, setPasswordValue] = useState(null);
+	const [passwordValue, setPasswordValue] = useState(null);
+	
   const handleSubmit = () => {
     const loginData = {
       email: emailValue,
@@ -16,7 +17,8 @@ export default function SignIn() {
         const date = new Date()
         date.setHours(date.getHours() + 4)
         console.log(token)
-        localStorage.setItem("token", token)
+				localStorage.setItem("token", token)
+				window.location.href = "http://localhost:3000/";
       });
   }
   return (
