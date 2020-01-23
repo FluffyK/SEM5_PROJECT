@@ -8,8 +8,8 @@ import Nav1 from "./components/NavBars/CatNavBar/Cat_nav"
 import Nav2 from "./components/NavBars/MainNavBar/main_nav"
 import SignUp from "./components/SingUp/SignUp"
 import SingIn from "./components/SignIn/SignIn"
-import ShopReg from "./components/ShopReg/Shopreg"
-import ProductReg from "./components/ProductReg/ProductReg"
+import ShopReg from "./components/ShopReg/Store"
+import ProductReg from "./components/ProductReg/Product"
 import Recover from "./components/Auth/Recover/Recover"
 import Password from "./components/Auth/Recover/Password/Password"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
@@ -35,13 +35,13 @@ function App() {
           </Header>
           <SingIn />
         </Route>
-        <Route path="/store/new">
+        <Route path="/stores/new">
           <Header>
             <Nav1 />
           </Header>
           <ShopReg />
         </Route>
-        <Route path="/product/new">
+        <Route path="/products/new">
           <Header>
             <Nav1 />
           </Header>
