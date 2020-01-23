@@ -22,25 +22,25 @@ export default function main_nav() {
                   </div>
                   <ul class="cat_menu">
                     <li>
-                      <a href="/category">Jewelry & Accessories</a>
+                      <a href="/category/jewelryandaccessory">Jewelry & Accessories</a>
                     </li>
                     <li>
-                      <a href="/category">Shoes</a>
+                      <a href="/category/shoes">Shoes</a>
                     </li>
                     <li>
-                      <a href="/category">Clothing</a>
+                      <a href="/category/clothing">Clothing</a>
                     </li>
                     <li>
-                      <a href="/category">Entertainment</a>
+                      <a href="/category/entertainment">Entertainment</a>
                     </li>
                     <li>
-                      <a href="/category">Vintage</a>
+                      <a href="/category/vintage">Vintage</a>
                     </li>
                     <li>
-                      <a href="/category">Toys</a>
+                      <a href="/category/toys">Toys</a>
                     </li>
                     <li>
-                      <a href="/category">Produces for Home</a>
+                      <a href="/category/producesforhome">Produces for Home</a>
                     </li>
                   </ul>
                 </div>

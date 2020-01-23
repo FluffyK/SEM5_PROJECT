@@ -1,6 +1,5 @@
 import React from "react";
 import two from "../../assets/2.jpg";
-
 export default function CategoryProduct() {
   return (
     <div className="App">
@@ -12,7 +11,7 @@ export default function CategoryProduct() {
               <ul>
                 <li>
                   <a href="#">
-                    <i class="fa fa-heart-o"></i>
+                  <i class="fa fa-heart"></i>
                   </a>
                 </li>
                 <li>

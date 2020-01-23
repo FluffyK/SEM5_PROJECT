@@ -12,6 +12,15 @@ import ShopReg from "./components/ShopReg/Shopreg"
 import ProductReg from "./components/ProductReg/ProductReg"
 import Recover from "./components/Auth/Recover/Recover"
 import Password from "./components/Auth/Recover/Password/Password"
+import ProductDetail from "./components/Product/ProductDetails"
+import ProductCategory from "./components/Product/CategoryProduct"
+import Jewelryandaccessory from './components/Category/JewelryandAccessories/JwlryandAcsry'
+import Clothing from "./components/Category/Clothing/Clothing"
+import Entertainment from './components/Category/Entertainment/Entertainment'
+import ProducesforHome from './components/Category/ProducesforHome/ProducesforHome'
+import Shoes from './components/Category/Shoes/Shoes'
+import Toys from './components/Category/Toys/Toys'
+import Vintage from './components/Category/Vintage/Vintage'
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,7 +35,7 @@ function App() {
           <Header>
             <Nav1 />
           </Header>
-          <Category />
+          <Category /><ProductCategory />
         </Route>
         <Route path="/">
           <Header>
@@ -69,6 +78,54 @@ function App() {
             <Nav2 />
           </Header>
           <Password />
+        </Route>
+        <Route path="/detail">
+          <Header>
+            <Nav2 />
+          </Header>
+          <ProductDetail />
+        </Route>
+        <Route path="/category/jewelryandaccessory">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><Jewelryandaccessory /><ProductCategory />
+        </Route>
+        <Route path="/category/clothing">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><Clothing /><ProductCategory />
+        </Route>
+        <Route path="/category/entertainment">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><Entertainment /><ProductCategory />
+        </Route>
+        <Route path="/category/producesforhome">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><ProducesforHome /><ProductCategory />
+        </Route>
+        <Route path="/category/shoes">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><Shoes /><ProductCategory />
+        </Route>
+        <Route path="/category/toys">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><Toys /><ProductCategory />
+        </Route>
+        <Route path="/category/Vintage">
+          <Header>
+            <Nav2 />
+          </Header>
+          <Category /><Vintage /><ProductCategory />
         </Route>
       </Switch>
       <Footer />

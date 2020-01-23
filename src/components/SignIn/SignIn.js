@@ -4,7 +4,7 @@ export default function SignIn() {
   return (
     <div className="App">
       <div class="sm-jumbotron:center-align">
-        <h2>Place You Product</h2>
+        <h2>Pl</h2>
         <form role="form">
           <div class="form-group row">
             <label class="col-lg-3 col-form-label form-control-label">
