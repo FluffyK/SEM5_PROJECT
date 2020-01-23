@@ -2,7 +2,7 @@ import React from "react"
 import "./App.css"
 import Footer from "./components/Footer/footer"
 import Home from "./components/Home/Home"
-import Category from "./components/Category/category"
+import Category from "./components/Category/Category"
 import Header from "./components/Header/header"
 import Nav1 from "./components/NavBars/CatNavBar/Cat_nav"
 import Nav2 from "./components/NavBars/MainNavBar/main_nav"
@@ -12,12 +12,7 @@ import ShopReg from "./components/ShopReg/Shopreg"
 import ProductReg from "./components/ProductReg/ProductReg"
 import Recover from "./components/Auth/Recover/Recover"
 import Password from "./components/Auth/Recover/Password/Password"
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 function App() {
   return (
     <Router>
@@ -28,47 +23,47 @@ function App() {
           </Header>
           <Category />
         </Route>
-        <Route path="/">
+        <Route path="/signUp">
           <Header>
-            <Nav2 />
-          </Header>
-          <Home />
-        </Route>
-        <Route path="/signup">
-          <Header>
-            <Nav2 />
+            <Nav1 />
           </Header>
           <SignUp />
         </Route>
-        <Route path="/signin">
+        <Route path="/signIn">
           <Header>
-            <Nav2 />
+            <Nav1 />
           </Header>
           <SingIn />
         </Route>
-        <Route path="/shopreg">
+        <Route path="/store/new">
           <Header>
-            <Nav2 />
+            <Nav1 />
           </Header>
           <ShopReg />
         </Route>
-        <Route path="/placeproduct">
+        <Route path="/product/new">
           <Header>
-            <Nav2 />
+            <Nav1 />
           </Header>
           <ProductReg />
         </Route>
         <Route path="/recover">
           <Header>
-            <Nav2 />
+            <Nav1 />
           </Header>
           <Recover />
         </Route>
-        <Route path="/password">
+        <Route path="/recover/password">
+          <Header>
+            <Nav1 />
+          </Header>
+          <Password />
+        </Route>
+        <Route path="/">
           <Header>
             <Nav2 />
           </Header>
-          <Password />
+          <Home />
         </Route>
       </Switch>
       <Footer />

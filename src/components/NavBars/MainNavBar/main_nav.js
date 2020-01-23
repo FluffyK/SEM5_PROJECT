@@ -1,6 +1,6 @@
 import React from "react"
 import Home from "../../Home/Home"
-import Category from "../../Category/category"
+import Category from "../../Category/Category"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 export default function main_nav() {
@@ -51,7 +51,7 @@ export default function main_nav() {
                       <a href="/">Home</a>
                     </li>
                     <li class="hassubs">
-                      <a href="/">
+                      <a href="/category">
                         All Categories
                       </a>
                     </li>

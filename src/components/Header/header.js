@@ -40,10 +40,10 @@ function Header(props) {
                         <img src={userphoto} alt="" />
                       </div>
                       <div>
-                        <a href="/signup">Register</a>
+                        <a href="/signUp">Register</a>
                       </div>
                       <div>
-                        <a href="/signin">Sign in</a>
+                        <a href="/signIn">Sign in</a>
                       </div>
                     </div>
                   </div>
@@ -58,7 +58,7 @@ function Header(props) {
                 <div class="col-lg-2 col-sm-3 col-3 order-1">
                   <div class="logo_container">
                     <div class="logo">
-                      <a href="un.html">YSTORE</a>
+                      <a href="/">YSTORE</a>
                     </div>
                   </div>
                 </div>

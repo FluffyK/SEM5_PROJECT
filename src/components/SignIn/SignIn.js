@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SignIn() {
   return (
-    <div className="App">
+    // <div className="App">
       <div class="sm-jumbotron:center-align">
         <h2>Place You Product</h2>
         <form role="form">
@@ -86,6 +86,6 @@ export default function SignIn() {
           </div>
         </form>
       </div>
-    </div>
+    // </div>
   );
 }
