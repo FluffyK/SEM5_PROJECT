@@ -3,8 +3,6 @@ import userphoto from "../../assets/43.png";
 import search from "../../assets/search.png";
 import images from "../../assets/images.jpg";
 import heart from "../../assets/heart.jpg";
-import Category from "../Category/Category";
-import Home from "../Home/Home";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +10,7 @@ import {
   Link
 } from "react-router-dom";
 
-function Header() {
+function Header(props) {
   return (
       <header class="header">
         <div>
@@ -42,10 +40,10 @@ function Header() {
                         <img src={userphoto} alt="" />
                       </div>
                       <div>
-                        <a href="#">Register</a>
+                        <a href="/signup">Register</a>
                       </div>
                       <div>
-                        <a href="#">Sign in</a>
+                        <a href="/signin">Sign in</a>
                       </div>
                     </div>
                   </div>
@@ -90,7 +88,6 @@ function Header() {
                                 </li>
                                 <li>
                                   <a class="clc">
-                                    {/* <Link to="/Category">Jewelry & Accessories</Link> */}
                                     Jewelry & Accessories
                                   </a>
                                 </li>
@@ -165,8 +162,10 @@ function Header() {
               </div>
             </div>
           </div>
+          {props.children}
         </div>
       </header>
+
   );
 }
 export default Header;

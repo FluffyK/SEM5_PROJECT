@@ -9,7 +9,9 @@ export default function Cat_nav() {
             <div class="col-lg-12">
               <div class="breadcrumb_iner">
                 <div class="breadcrumb_iner_item">
-                  <p>Home / All Categories</p>
+                  <a className="anchor_tag_nav" href="/"><p>Home/</p></a>
+                  
+                  <a className="anchor_tag_nav" href="/category"><p>Categories</p></a>
                 </div>
               </div>
             </div>

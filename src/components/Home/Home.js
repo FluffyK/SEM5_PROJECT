@@ -1,6 +1,4 @@
 import React from 'react'
-// import Footer from "../Footer/footer";
-// import Header from "../Header/header";
 import banner from "../../assets/88.png";
 import zero from "../../assets/0.jpg";
 import fiftyfive from "../../assets/55.jpg";
