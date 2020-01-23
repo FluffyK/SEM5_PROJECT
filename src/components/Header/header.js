@@ -40,10 +40,10 @@ function Header(props) {
                         <img src={userphoto} alt="" />
                       </div>
                       <div>
-                        <a href="#">Register</a>
+                        <a href="/signup">Register</a>
                       </div>
                       <div>
-                        <a href="#">Sign in</a>
+                        <a href="/signin">Sign in</a>
                       </div>
                     </div>
                   </div>

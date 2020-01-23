@@ -1,6 +1,6 @@
 import React from "react"
 import Home from "../../Home/Home"
-import Category from "../../Category/Category"
+import Category from "../../Category/category"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 export default function main_nav() {
