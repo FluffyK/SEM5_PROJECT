@@ -32,7 +32,7 @@ function Header(props) {
                     </div>
                     <div class="top_bar_user">
                       <a href="#">
-                        MDL<i class="fas fa-chevron-down"></i>
+                        MDL <i class="fas chevron-down"></i>
                       </a>
                     </div>
                     <div class="top_bar_user">
@@ -79,7 +79,7 @@ function Header(props) {
                               <span class="custom_dropdown_placeholder clc">
                                 All Categories
                               </span>
-                              <i class="fas fa-chevron-down"></i>
+                              <i class = "fas fa-chevron-down"></i>
                               <ul class="custom_list clc">
                                 <li>
                                   <a class="clc">
