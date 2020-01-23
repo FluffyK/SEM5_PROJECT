@@ -35,7 +35,7 @@ function App() {
           <Header>
             <Nav1 />
           </Header>
-          <Category /><ProductCategory />
+          <Category /><ProductCategory/>
         </Route>
         <Route path="/">
           <Header>
@@ -85,43 +85,43 @@ function App() {
           </Header>
           <ProductDetail />
         </Route>
-        <Route path="/category/jewelryandaccessory">
+        <Route path="/jewelryandaccessory">
           <Header>
             <Nav2 />
           </Header>
           <Category /><Jewelryandaccessory /><ProductCategory />
         </Route>
-        <Route path="/category/clothing">
+        <Route path="/clothing">
           <Header>
             <Nav2 />
           </Header>
           <Category /><Clothing /><ProductCategory />
         </Route>
-        <Route path="/category/entertainment">
+        <Route path="/entertainment">
           <Header>
             <Nav2 />
           </Header>
           <Category /><Entertainment /><ProductCategory />
         </Route>
-        <Route path="/category/producesforhome">
+        <Route path="/producesforhome">
           <Header>
             <Nav2 />
           </Header>
           <Category /><ProducesforHome /><ProductCategory />
         </Route>
-        <Route path="/category/shoes">
+        <Route path="/shoes">
           <Header>
             <Nav2 />
           </Header>
           <Category /><Shoes /><ProductCategory />
         </Route>
-        <Route path="/category/toys">
+        <Route path="/toys">
           <Header>
             <Nav2 />
           </Header>
           <Category /><Toys /><ProductCategory />
         </Route>
-        <Route path="/category/Vintage">
+        <Route path="/Vintage">
           <Header>
             <Nav2 />
           </Header>
