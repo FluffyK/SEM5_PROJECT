@@ -6,7 +6,8 @@ export default function SignIn() {
   const [emailValue, setEmailValue] = useState(null);
 	const [passwordValue, setPasswordValue] = useState(null);
 	
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+		e.preventDefault()
     const loginData = {
       email: emailValue,
       password: passwordValue

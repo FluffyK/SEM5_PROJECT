@@ -9,31 +9,8 @@ export default function Product() {
   const [titleValue, setTitleValue] = useState(null)
   const [fileValue, setFileValue] = useState(null)
   const [descriptionValue, setDescriptionValue] = useState(null)
-  
-  const multipleRead = (files) => {
-    const arr = []
-    var reader = new FileReader();  
-    const readFile = async(index) => {
-      if( index >= files.length ) return;
-      var file = files[index];
-      reader.onload = async(e) => {  
-        // get file content  
-        let promise = new Promise((resolve, reject) => {
-          setTimeout(() => resolve(arr.push({ data: btoa(e.target.result), contentType: "image/png" })), 1000)
-        });
-      
-        await promise; 
-        // do sth with bin
-        readFile(index+1)
-      }
-      reader.readAsBinaryString(file);
-    }
-    readFile(0)
-    setTimeout(function(){ return arr }, 3000); 
 
-  }
-
-  const handleSubmit = async(e) => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
     let config = {
@@ -42,27 +19,34 @@ export default function Product() {
       }
     }
 
-    let newArr = multipleRead(fileValue)
+    const reader = new FileReader()
 
-    console.log(newArr)
+    // Convert data to base64
+    reader.readAsBinaryString(fileValue)
+    reader.onload = function(e) {
+      const arr = []
+      const b64Img = btoa(e.target.result)
 
-    const productData = {
-      storeName: nameValue,
-      productTitle: titleValue,
-      productCategories: categoryValue,
-      productPrice: priceValue,
-      productImages: newArr
+      arr.push({ data: b64Img, contentType: "imgType" })
+
+      const productData = {
+        storeName: nameValue,
+        productTitle: titleValue,
+        productCategories: categoryValue,
+        productPrice: priceValue,
+        productImages: arr
+      }
+
+      console.log(productData)
+      axios
+        .post("https://localhost:4000/products", productData, config)
+        .then(res => {
+          console.log(res.data)
+        })
     }
-    console.log(productData)
-    axios
-      .post("https://localhost:4000/products", productData, config)
-      .then(res => {
-        console.log(res.data)
-      })
-    // }
   }
   return (
-    <div className="App">
+    <div>
       <h2>Create Product</h2>
       <hr />
       <form className="form-store" onSubmit={handleSubmit}>
@@ -83,7 +67,7 @@ export default function Product() {
             type="text"
             class="form-control"
             id="exampleFormControlInput1"
-            placeholder="Store Name"
+            placeholder="Product Title"
             value={titleValue}
             onChange={e => setTitleValue(e.target.value)}
           />
@@ -128,7 +112,7 @@ export default function Product() {
         <div class="form-group">
           <label>Choose Images:</label>
           <input
-            onChange={e => setFileValue(e.target.files)}
+            onChange={e => setFileValue(e.target.files[0])}
             type="file"
             class="form-control-file"
             id="exampleFormControlFile1"

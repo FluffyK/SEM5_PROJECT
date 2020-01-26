@@ -4,18 +4,16 @@ import search from "../../assets/search.png"
 import images from "../../assets/images.jpg"
 import heart from "../../assets/heart.jpg"
 import axios from 'axios'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 
 class Header extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      signInBool: false
-    }
   }
   componentDidMount() {
     const signDiv = document.querySelector("#sign-menu")
     const usernameDiv = document.querySelector("#username-div")
+    const createDiv = document.querySelector("#create-div")
+    const createDiv2 = document.querySelector("#create-div2")
     if (localStorage.getItem("token") !== null) {
 
       const config = {
@@ -25,10 +23,12 @@ class Header extends Component {
       }
       axios.get("https://localhost:4000/user", config)
         .then(el => {
-          usernameDiv.appendChild(document.createTextNode(el.data.username))
+          const aEdit = document.createElement("a")
+          aEdit.href = "/profile/edit"
+          aEdit.innerHTML = el.data.username
+          usernameDiv.appendChild(aEdit)
         })
 
-      this.setState({signInBool: true})
       const div1 = document.createElement("div")
       div1.className = "user_icon"
       const img1 = document.createElement("img")
@@ -40,12 +40,26 @@ class Header extends Component {
       a1.href = "/logout"
       a1.innerHTML = "Logout"
       div2.appendChild(a1)
+      
+      
+      const div5 = document.createElement("div")
+      const a5 = document.createElement("a")
+      a5.href = "/stores/new"
+      a5.innerHTML = "Create Store"
+      div5.appendChild(a5)
+      
+      const div6 = document.createElement("div")
+      const a6 = document.createElement("a")
+      a6.href = "/products/new"
+      a6.innerHTML = "Create Product"
+      div6.appendChild(a6)
 
+      createDiv.appendChild(div5)
+      createDiv2.appendChild(div6)
       signDiv.appendChild(div1)
       signDiv.appendChild(div2)
 
     } else {
-      this.setState({signInBool: false})
       const div1 = document.createElement("div")
       div1.className = "user_icon"
       const img1 = document.createElement("img")
@@ -80,6 +94,11 @@ class Header extends Component {
                     <div class="user_icon">
                       <img src={userphoto} alt="" />
                     </div>
+                  </div>
+                  <div class="top_bar_contact_item" id="create-div">
+                    
+                  </div>
+                  <div class="top_bar_contact_item ml-4" id="create-div2">
                     
                   </div>
                   <div class="top_bar_content ml-auto">

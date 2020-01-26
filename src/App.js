@@ -22,6 +22,7 @@ import Shoes from "./components/Category/Shoes/Shoes"
 import Toys from "./components/Category/Toys/Toys"
 import Vintage from "./components/Category/Vintage/Vintage"
 import Logout from './components/Auth/Logout/Logout'
+import Profile from './components/Profile/Profile'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import { render } from "@testing-library/react"
 class App extends Component {
@@ -52,6 +53,12 @@ class App extends Component {
               <Nav2 />
             </Header>
             <Logout />
+          </Route>
+          <Route path="/profile/edit">
+            <Header>
+              <Nav1 />
+            </Header>
+            <Profile />
           </Route>
           <Route path="/stores/new">
             <Header>
@@ -89,7 +96,7 @@ class App extends Component {
             </Header>
             <Jewelry />
           </Route>
-          <Route path="/category/clothing">
+          {/* <Route path="/category/clothing">
             <Header>
               <Nav2 />
             </Header>
@@ -136,7 +143,7 @@ class App extends Component {
             <Category />
             <Vintage />
             <ProductCategory />
-          </Route>
+          </Route> */}
           <Route path="/category">
             <Header>
               <Nav1 />

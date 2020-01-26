@@ -17,7 +17,8 @@ export default function SignUp() {
     axios.post('https://localhost:4000/user/register', registerData)
       .then(res =>{
         console.log(res.data)
-    		window.location.href = "http://localhost:3000/";
+        window.location.href = "http://localhost:3000/";
+        
       });
   }
   return (
@@ -43,12 +44,10 @@ export default function SignUp() {
             </div>
 
             <div
-              class="wrap-input100 validate-input"
-              data-validate="Valid email is required: ex@abc.xyz">
+              class="wrap-input100 validate-input">
               <input
                 class="input100"
                 type="text"
-                name="email"
                 placeholder="Username"
                 value={usernameValue}
                 onChange={e => setUsernameValue(e.target.value)}

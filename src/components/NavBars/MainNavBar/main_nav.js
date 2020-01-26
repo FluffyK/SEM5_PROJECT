@@ -22,7 +22,7 @@ export default function main_nav() {
                   </div>
                   <ul class="cat_menu">
                     <li>
-                      <a href="/category/jewelryandaccessory">Jewelry & Accessories</a>
+                      <a href="/category/jewelry">Jewelry & Accessories</a>
                     </li>
                     <li>
                       <a href="/category/shoes">Shoes</a>
@@ -40,7 +40,7 @@ export default function main_nav() {
                       <a href="/category/toys">Toys</a>
                     </li>
                     <li>
-                      <a href="/category/producesforhome">Produces for Home</a>
+                      <a href="/category/produces">Produces for Home</a>
                     </li>
                   </ul>
                 </div>

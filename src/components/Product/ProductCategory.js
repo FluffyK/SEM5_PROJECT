@@ -1,7 +1,7 @@
 import React from "react"
 export default function CategoryProduct(props) {
   return (
-    <div className="App">
+    <div>
       <div class="col-lg-4 col-sm-6">
         <div class="single_category_product">
           <div class="single_category_img">
